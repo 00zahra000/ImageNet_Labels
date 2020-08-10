@@ -1,0 +1,13 @@
+
+#Classes
+import json
+with open('imagenet-simple-labels.json') as f:
+  labels = json.load(f)
+
+def class_id_to_label(i):
+  return labels[:i]
+classes = class_id_to_label(1000)
+# print(classes)
+with open('labels.txt', 'w') as filehandle:
+    for item in classes:
+        filehandle.write('%s\n' % item)
